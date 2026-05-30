@@ -35,4 +35,4 @@ jobs:
         echo "SCHEDULE_TIME=18:00" >> .env
         
     - name: Run daily analysis
-      run: python main.py --schedule
+      run: python main.py --force-run
