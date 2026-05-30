@@ -29,7 +29,8 @@ jobs:
         # 复制环境变量模板并替换为secrets中的配置
         cp .env.example .env
         echo "STOCK_LIST=${{ secrets.STOCK_LIST }}" >> .env
-        echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> .env
+        echo "ANSPIRE_API_KEYS=${{ secrets.ANSPIRE_API_KEYS }}" >> .env
+        echo "FEISHU_WEBHOOK_URL=${{ secrets.FEISHU_WEBHOOK_URL }}" >> .env
         echo "SCHEDULE_ENABLED=true" >> .env
         echo "SCHEDULE_TIME=18:00" >> .env
         
