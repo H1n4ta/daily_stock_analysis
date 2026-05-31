@@ -33,7 +33,6 @@ jobs:
     - name: Run stock filter
       run: |
         python stock_filter.py --no-sector-filter
-      working-directory: ./daily_stock_analysis
 
     - name: Upload results
       uses: actions/upload-artifact@v4
