@@ -1,10 +1,7 @@
 name: Daily Stock Analysis
 
 on:
-  schedule:
-    # 每天18:00运行（UTC时间，北京时间为次日2:00，需根据需要调整）
-    - cron: '0 10 * * *'
-  workflow_dispatch:  # 允许手动触发
+  workflow_dispatch:  # 仅允许手动触发
 
 jobs:
   analyze:
@@ -31,7 +28,7 @@ jobs:
         echo "STOCK_LIST=${{ secrets.STOCK_LIST }}" >> .env
         echo "ANSPIRE_API_KEYS=${{ secrets.ANSPIRE_API_KEYS }}" >> .env
         echo "FEISHU_WEBHOOK_URL=${{ secrets.FEISHU_WEBHOOK_URL }}" >> .env
-        echo "SCHEDULE_ENABLED=true" >> .env
+        echo "SCHEDULE_ENABLED=false" >> .env   # 关闭定时执行
         echo "SCHEDULE_TIME=18:00" >> .env
         
     - name: Run daily analysis
